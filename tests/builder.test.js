@@ -6,7 +6,7 @@ import { MainPage, RegisterPage, SettingsPage } from '../src/pages/index';
 const url = 'https://realworld.qa.guru/#/';
 let newUser;
 
-test.describe.only('Builder ',() => {
+test.describe('Builder ',() => {
     test.beforeEach( async ({ page }) => {
 
 newUser = new UserBuilder().addBio().addEmail().addName().addPassword().generate();
