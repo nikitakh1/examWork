@@ -5,6 +5,7 @@ export class MainPage extends BasePage {
         super(page);
         this.logo = this.page.locator('.navbar-brand');
         this.menuButton = this.page.locator('.dropdown-toggle');
+        //this.menuButton = this.page.locator('.navbar .dropdown-toggle');
         this.settingsButton = this.page.getByRole('link', { name: 'Settings' });
         this.signupButton = this.page.getByRole('link', { name: 'Sign up' });
         this.profileButton = this.page.getByRole('link', { name: 'Profile' });

@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { faker } from '@faker-js/faker';
-import { UserBuilder } from '../src/helpers/index';
 import { App } from '../src/pages/app.page';
-import { ArticleBuilder } from '../src/helpers/index';
+import { ArticleBuilder, UserBuilder } from '../src/helpers/index';
 
 const url = 'https://realworld.qa.guru/#/';
 let newUser;
@@ -12,77 +10,56 @@ let newArcticle;
 test.describe('Тесты на профиль пользователя',() => {
     test.beforeEach( async ({ page }) => {
 
-//newUser = new UserBuilder().addBio().addEmail().addName().addPassword().addPhoto().addNewEmail().addNewName().generate();
-
-
-newUser = {
-    bio : faker.music.genre(),
-    email: faker.internet.email(),
-    name : faker.person.firstName(),
-    password : faker.internet.password(),
-    photo : faker.image.urlLoremFlickr(),
-    newEmail: faker.internet.email({ firstName: 'test'}),
-    newName: faker.person.firstName('female'),
- };
- 
+newUser = new UserBuilder().addBio().addEmail().addName().addPassword().addNewName().addNewEmail().generate();
 
 app = new App(page);
  
     await app.mainPage.open(url);
     await app.mainPage.goToRegister();
-    await app.registerPage.register(newUser.name, newUser.email, newUser.password);
+    await app.registerPage.register(newUser.userName, newUser.userEmail, newUser.userPassword);
       });
 
 test('Пользователь может изменить Bio', async ({ page }) => {
     await app.mainPage.goToSettings();
-    await app.settingsPage.updateProfile(newUser.bio);
+    await app.settingsPage.updateProfile(newUser.userBio);
     let profileInfo = await app.settingsPage.getProfile();
-    await expect(profileInfo.bio).toHaveText(newUser.bio);
+    await expect(profileInfo.bio).toHaveText(newUser.userBio);
 });
 
 test('Пользователь может добавить фото', async ({ page }) => {
     await app.mainPage.goToSettings();
-    await app.settingsPage.enterUrlPhoto(newUser.photo);
-
-    console.log('Expected URL:', newUser.photo);
+    await app.settingsPage.enterUrlPhoto(newUser.userPhoto);
+    console.log('Expected URL:', newUser.userPhoto);
     console.log('Actual URL:', await app.settingsPage.photoField.inputValue());
-
-    /*let urlPhoto = await settingsPage.getUrlPhoto();*/
-    await expect(app.settingsPage.photoField).toHaveValue(newUser.photo);
+    await expect(app.settingsPage.photoField).toHaveValue(newUser.userPhoto);
 
 });
 
 test('Пользователь может изменить имя', async ({ page }) => {
-    console.log('First Expected Name:', newUser.name);
-    //let newName = faker.person.firstName();
+    console.log('First Expected Name:', newUser.userName);
     await app.mainPage.goToSettings();
-    await app.settingsPage.enterNewName(newUser.newName);
-    
-    console.log('Expected Name:', newUser.newName);
+    await app.settingsPage.enterNewName(newUser.userNewName);
+    console.log('Expected Name:', newUser.userNewName);
     console.log('Actual Name:', await app.settingsPage.nameField.inputValue());
-
-    await expect(app.settingsPage.nameField).toHaveValue(newUser.newName);
+    await expect(app.settingsPage.nameField).toHaveValue(newUser.userNewName);
 });
 
 test('Пользователь может изменить email', async ({ page }) => {
-    //let newEmail = faker.internet.email();
     await app.mainPage.goToSettings();
-    await app.settingsPage.enterNewEmail(newUser.newEmail);
-    await expect(app.settingsPage.emailField).toHaveValue(newUser.newEmail);
+    await app.settingsPage.enterNewEmail(newUser.userNewEmail);
+    await expect(app.settingsPage.emailField).toHaveValue(newUser.userNewEmail);
 });
 
 test('Пользователь может успешно авторизоваться', async ({ page }) => {
   await app.mainPage.logout();
   await app.mainPage.goToLogin();
-  await app.loginPage.login(newUser.email, newUser.password);
-  //await page.waitForSelector('.navbar .dropdown-toggle .user-pic', { state: 'visible', timeout: 20000 }); // Ожидание видимости изображения пользователя
+  await app.loginPage.login(newUser.userEmail, newUser.userPassword);
   const userNameElement = await app.mainPage.userName;
-  await expect(userNameElement).toHaveAttribute('alt', newUser.name);
+  await expect(userNameElement).toHaveAttribute('alt', newUser.userName);
   });
 
 test('Пользователь может успешно выйти из системы', async ({ page }) => {
   await app.mainPage.logout();
-  await page.waitForSelector('.nav-link', { hasText: 'Login', state: 'visible', timeout: 20000 }); // Ожидание видимости кнопки входа
   await expect(app.mainPage.loginButton).toBeVisible();
 });
 
@@ -93,19 +70,13 @@ test.describe('Тесты на статьи пользователя',() => {
 
 newArcticle = new ArticleBuilder().addTitle().addAbout().addText().addTag().addTitleNew().addTextNew().addTagNew().generate();
 
-newUser = {
-    bio : faker.music.genre(),
-    email: faker.internet.email(),
-    name : faker.person.firstName(),
-    password : faker.internet.password(),
-    photo : faker.image.urlPicsumPhotos()
- };
-
+newUser = new UserBuilder().addBio().addEmail().addName().addPassword().generate();
+ 
 app = new App(page);
  
 await app.mainPage.open(url);
 await app.mainPage.goToRegister();
-await app.registerPage.register(newUser.name, newUser.email, newUser.password);
+await app.registerPage.register(newUser.userName, newUser.userEmail, newUser.userPassword);
 });
 
 test('Пользователь публикует статью', async ({ page }) => {

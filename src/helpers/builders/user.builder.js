@@ -1,6 +1,17 @@
 import { faker } from '@faker-js/faker';
 
 export class UserBuilder {
+
+    constructor() {
+        this.userEmail = '';
+        this.userName = '';
+        this.userPassword = '';
+        this.userBio = '';
+        this.userPhoto = '';
+        this.userNewEmail = '';
+        this.userNewName = '';
+      }
+
     addEmail() {
         this.userEmail = faker.internet.email();
         return this;
