@@ -43,7 +43,7 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://api.zippopotam.us', // Обновите baseURL для API-тестов
+    baseURL: 'https://jsonplaceholder.typicode.com', // Обновите baseURL для API-тестов
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -57,12 +57,28 @@ module.exports = defineConfig({
     },
     {
       name: 'api',
-      testMatch: '**/api.spec.js', // Указываем, что этот проект будет запускать только API-тесты
+      testMatch: '**/api.test.js', // Указываем, что этот проект будет запускать только API-тесты
       use: {
         headless: true, // Запускаем без графического интерфейса
         viewport: null, // Отключаем виртуальный экран
       },
     },
+    /*{
+      name: 'Mobile Chrome',
+      use: {
+        ...devices['Pixel 5'],
+        userAgent: 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
+      },
+    },
+    */
+   /* {
+      name: 'Mobile Safari',
+      use: {
+        ...devices['iPhone 12'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1'
+      },
+    }, 
+    */
     /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },

@@ -7,7 +7,10 @@
     "allureGenerate": "allure generate --clean",
     "debug": "npx playwright test --ui",
     "test": "npx playwright test",
-    "testEnv": "export NODE_ENV=auto-test npx playwright test"
+    "testApi": "npx playwright test tests/api.test.js",
+    "testUI": "npx playwright test tests/ui.test.js",
+    "testMobile": "npx playwright test --project=\"Mobile Chrome\"",
+    "generateAndSendTG": "allure generate --clean && java -DconfigFile=notifications/telegram.json -jar notifications/allure-notifications-4.8.0.jar"
   },
   "keywords": [],
   "author": "n.khakhilev",
