@@ -71,6 +71,21 @@ test('Пользователь может изменить email', async ({ page
     await expect(app.settingsPage.emailField).toHaveValue(newUser.newEmail);
 });
 
+test('Пользователь может успешно авторизоваться', async ({ page }) => {
+  await app.mainPage.logout();
+  await app.mainPage.goToLogin();
+  await app.loginPage.login(newUser.email, newUser.password);
+  //await page.waitForSelector('.navbar .dropdown-toggle .user-pic', { state: 'visible', timeout: 20000 }); // Ожидание видимости изображения пользователя
+  const userNameElement = await app.mainPage.userName;
+  await expect(userNameElement).toHaveAttribute('alt', newUser.name);
+  });
+
+test('Пользователь может успешно выйти из системы', async ({ page }) => {
+  await app.mainPage.logout();
+  await page.waitForSelector('.nav-link', { hasText: 'Login', state: 'visible', timeout: 20000 }); // Ожидание видимости кнопки входа
+  await expect(app.mainPage.loginButton).toBeVisible();
+});
+
 }); 
 
 test.describe('Тесты на статьи пользователя',() => {

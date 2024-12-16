@@ -1,4 +1,4 @@
-import { MainPage, SettingsPage, RegisterPage, ArticlePage } from './index';
+import { MainPage, SettingsPage, RegisterPage, ArticlePage, LoginPage } from './index';
 
 export class App {
     constructor(page) {
@@ -7,5 +7,6 @@ export class App {
         this.registerPage = new RegisterPage(page);
         this.settingsPage = new SettingsPage(page);
         this.articlePage = new ArticlePage(page);
+        this.loginPage = new LoginPage(page);
     }
 };
