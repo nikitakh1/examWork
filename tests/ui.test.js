@@ -33,7 +33,7 @@ app = new App(page);
     await app.registerPage.register(newUser.name, newUser.email, newUser.password);
       });
 
-test('Пользователь может изменить bio', async ({ page }) => {
+test('Пользователь может изменить Bio', async ({ page }) => {
     await app.mainPage.goToSettings();
     await app.settingsPage.updateProfile(newUser.bio);
     let profileInfo = await app.settingsPage.getProfile();
