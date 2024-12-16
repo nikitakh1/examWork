@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "allureOpen": "allure open",
-    "allureGenerate": "allure generate",
+    "allureGenerate": "allure generate --clean",
     "debug": "npx playwright test --ui",
     "test": "npx playwright test",
     "testEnv": "export NODE_ENV=auto-test npx playwright test"

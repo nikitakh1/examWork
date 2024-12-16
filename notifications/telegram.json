@@ -1,0 +1,19 @@
+{
+    "base": {
+      "logo": "",
+      "project": "Examwork nikitakh1 qa_guru_course",
+      "environment": "some env",
+      "comment": "some comment",
+      "reportLink": "",
+      "language": "en",
+      "allureFolder": "allure-report",
+      "enableChart": true,
+      "enableSuitesPublishing": false,
+      "customData": {}
+    },
+    "telegram": {
+      "token": "7052322271:AAFbxcDdPN6_tjpcq6HEBwOISvnMSkgMzgU",
+      "chat": "-4600681222",
+      "replyTo": ""
+    }
+}
