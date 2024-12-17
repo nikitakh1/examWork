@@ -1,2 +1,0 @@
-Expected URL: https://loremflickr.com/1762/2594?lock=7506678516839194
-Actual URL: https://loremflickr.com/1762/2594?lock=7506678516839194
