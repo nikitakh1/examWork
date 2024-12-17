@@ -1,3 +1,0 @@
-First Expected Name: Charley
-Expected Name: Frances
-Actual Name: Frances

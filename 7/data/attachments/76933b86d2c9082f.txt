@@ -1,3 +1,0 @@
-First Expected Name: Eliezer
-Expected Name: Miranda
-Actual Name: Miranda
