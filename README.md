@@ -112,22 +112,22 @@ npm run testApi
    ```
 
 <a name="jenkins"></a>
-## </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/"> Jenkins </a>
+## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/Jenkins_logo.svg.png"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/"> Jenkins </a>
 
 Для доступа в <code>Jenkins</code> потребуется пройти регистрацию на платформе [Jenkins](https://jenkins.autotests.cloud/). Для запуска сборки необходимо нажать кнопку <code>Build now</code>.
 ![chrome_J8fvZ6vegn](https://github.com/user-attachments/assets/d644f993-57c0-478b-863a-2bd9520247ee)
 После завершения сборки в разделе <code>Build History</code> можно перейти на страницу этой сборки, кликнув по ее номеру. На странице будут доступны сгенерированные отчеты в Allure TestOps и Allure Report.
 ![chrome_J8fvZ6vegn](https://github.com/user-attachments/assets/d644f993-57c0-478b-863a-2bd9520247ee)
 
-## <a name="allureReport"></a> Пример Allure-отчета
+## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/allure.png"> <a name="allureReport"></a> Пример Allure-отчета
 
 Пример Allure-отчета будет добавлен позже.
 
-## <a name="allureTestOpsReport"></a> Пример Allure TestOps-отчета
+## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/testops.logo.svg"> <a name="allureTestOpsReport"></a> Пример Allure TestOps-отчета
 
 Пример Allure TestOps-отчета будет добавлен позже.
 
-## <a name="tg"></a> Уведомления в Telegram
+## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/tg.svg.png"> <a name="tg"></a> Уведомления в Telegram
 
 Для отправки ботом, созданным в <code>Telegram</code>, сообщения с отчетом о результатах запуска автотестов в чат необходимо выполнить следующие команды:
 1. Запустите тесты:
