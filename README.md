@@ -123,11 +123,11 @@ npm run testApi
 <img title="jenkins" src="media/Jenkins2.png ">
 </p>
 
-## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/allure.png"> <a name="allureReport"></a> Пример Allure-отчета
+## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/allure.png"> <a name="allureReport"></a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/15/allure/#/"> Allure-отчета </a>
 
 Пример Allure-отчета будет добавлен позже.
 
-## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/testops.logo.svg"> <a name="allureTestOpsReport"></a> Пример Allure TestOps-отчета
+## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/testops.logo.svg"> <a name="allureTestOpsReport"></a> Пример <a target="_blank" href="[https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/](https://allure.autotests.cloud/launch/43255/?treeId=0)"> Allure Testops-отчета </a>
 
 Пример Allure TestOps-отчета будет добавлен позже.
 
