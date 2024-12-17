@@ -1,3 +1,0 @@
-First Expected Name: Ericka
-Expected Name: Gwen
-Actual Name: Gwen
