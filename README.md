@@ -142,3 +142,6 @@ npm run testApi
    ```sh
    npm run generateAndSendTG
    ```
+<p align="center">
+<img title="jenkins" src="media/tgreport.png ">
+</p>
