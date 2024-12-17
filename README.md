@@ -123,15 +123,23 @@ npm run testApi
 <img title="jenkins" src="media/Jenkins2.png ">
 </p>
 
-## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/allure.png"> <a name="allureReport"></a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/15/allure/#/"> Allure-отчета </a>
+## <img width="20" style="vertical-align:middle" title="allureReport" src="media/allure.png"> <a name="allureReport"></a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/19/allure/#"> Allure-отчета </a>
 
-Пример Allure-отчета будет добавлен позже.
+<p align="center">
+<img title="allureReport" src="media/allure1.png ">
+</p>
 
-## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/testops.logo.svg"> <a name="allureTestOpsReport"></a> Пример <a target="_blank" href="[https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/](https://allure.autotests.cloud/launch/43255/?treeId=0)"> Allure Testops-отчета </a>
+<p align="center">
+<img title="allureReport" src="media/allure2.png ">
+</p>
 
-Пример Allure TestOps-отчета будет добавлен позже.
+## <img width="20" style="vertical-align:middle" title="allureTestOpsReport" src="media/testops.logo.svg"> <a name="allureTestOpsReport"></a> Пример <a target="_blank" href="https://allure.autotests.cloud/launch/43259"> Allure Testops-отчета </a>
 
-## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/tg.svg.png"> <a name="tg"></a> Уведомления в Telegram
+<p align="center">
+<img title="allureReport" src="media/testops.png ">
+</p>
+
+## <img width="20" style="vertical-align:middle" title="tg" src="media/tg.svg.png"> <a name="tg"></a> Уведомления в Telegram
 
 Для отправки ботом, созданным в <code>Telegram</code>, сообщения с отчетом о результатах запуска автотестов в чат необходимо выполнить следующие команды:
 1. Запустите тесты:
