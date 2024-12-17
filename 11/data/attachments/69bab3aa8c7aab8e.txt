@@ -1,3 +1,0 @@
-First Expected Name: Federico
-Expected Name: Elizabeth
-Actual Name: Elizabeth
