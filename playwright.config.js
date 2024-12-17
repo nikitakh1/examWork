@@ -43,7 +43,7 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://jsonplaceholder.typicode.com', // Обновите baseURL для API-тестов
+    baseURL: process.env.BASE_URL || 'https://realworld.qa.guru', // Обновите baseURL для тестов
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -56,66 +56,16 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testIgnore: ['**/api.test.js'],
     },
     {
       name: 'api',
       testMatch: '**/api.test.js', // Указываем, что этот проект будет запускать только API-тесты
       use: {
+        baseURL: process.env.API_BASE_URL || 'https://jsonplaceholder.typicode.com', // Обновите baseURL для API-тестов
         headless: true, // Запускаем без графического интерфейса
         viewport: null, // Отключаем виртуальный экран
       },
     },
-    /*{
-      name: 'Mobile Chrome',
-      use: {
-        ...devices['Pixel 5'],
-        userAgent: 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
-      },
-    },
-    */
-   /* {
-      name: 'Mobile Safari',
-      use: {
-        ...devices['iPhone 12'],
-        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1'
-      },
-    }, 
-    */
-    /* {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    }, */
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });
