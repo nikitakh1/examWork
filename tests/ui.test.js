@@ -1,5 +1,3 @@
-
-
 import { test, expect } from '@playwright/test';
 import { App } from '../src/pages/app.page';
 import { ArticleBuilder, UserBuilder } from '../src/helpers/index';
