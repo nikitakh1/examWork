@@ -8,7 +8,7 @@ constructor (page) {
     this.usernameField = this.page.getByPlaceholder('Your Name');
     this.signupButton = this.page.getByRole('button', { name: 'Sign up' });
 }
-// todo нейминг
+
 async register (userName = '', userEmail = '', userPassword = '') {
     await this.usernameField.click();
     await this.usernameField.fill(userName);

@@ -69,9 +69,6 @@ async publishNewTag (articleTag) {
 
 async editArticle () {
    await this.editArticleButton.nth(1).click();
-   //await this.articleTitleField.click();
-   //await this.articleTitleField.fill(articleTitle);
-   //await this.updateArticleButton.click();
 }
 
 
