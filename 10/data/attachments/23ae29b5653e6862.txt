@@ -1,3 +1,0 @@
-First Expected Name: Marcel
-Expected Name: Heather
-Actual Name: Heather
