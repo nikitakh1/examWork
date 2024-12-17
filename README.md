@@ -115,9 +115,13 @@ npm run testApi
 ## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/Jenkins_logo.svg.png"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/001-nikitakh1-examauto/"> Jenkins </a>
 
 Для доступа в <code>Jenkins</code> потребуется пройти регистрацию на платформе [Jenkins](https://jenkins.autotests.cloud/). Для запуска сборки необходимо нажать кнопку <code>Build now</code>.
-![chrome_J8fvZ6vegn](https://github.com/user-attachments/assets/d644f993-57c0-478b-863a-2bd9520247ee)
+<p align="center">
+<img title="jenkins" src="media/Jenkins1.png ">
+</p>
 После завершения сборки в разделе <code>Build History</code> можно перейти на страницу этой сборки, кликнув по ее номеру. На странице будут доступны сгенерированные отчеты в Allure TestOps и Allure Report.
-![chrome_J8fvZ6vegn](https://github.com/user-attachments/assets/d644f993-57c0-478b-863a-2bd9520247ee)
+<p align="center">
+<img title="jenkins" src="media/Jenkins2.png ">
+</p>
 
 ## <img width="20" style="vertical-align:middle" title="Jenkins" src="media/allure.png"> <a name="allureReport"></a> Пример Allure-отчета
 
