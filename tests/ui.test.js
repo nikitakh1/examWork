@@ -3,7 +3,6 @@ import { App } from '../src/pages/app.page';
 import { ArticleBuilder, UserBuilder } from '../src/helpers/index';
 import { allure } from 'allure-playwright';
 
-const url = 'https://realworld.qa.guru/#/';
 let newUser;
 let app;
 let newArcticle;

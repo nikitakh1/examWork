@@ -1,17 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { GetPostsService, CreatePostService, GetCommentsService, CreateCommentService, UpdatePostService, DeletePostService, PostDataGenerator, CommentDataGenerator } from '../src/helpers/index';
 
-const URL = 'https://jsonplaceholder.typicode.com';
-
 const postDataGenerator = new PostDataGenerator();
 const commentDataGenerator = new CommentDataGenerator();
 
 test.describe('Функциональные API тесты', () => {
- 
+
   //Test1 - Получение списка постов
   test('GET /posts', async ({ request }) => {
     let getPostsService = new GetPostsService();
-    let response = await getPostsService.get(request, `${URL}/posts`);
+    let response = await getPostsService.get(request, '/posts');
     expect(response.status()).toBe(200);
     let posts = await response.json();
     expect(posts.length).toBeGreaterThan(0);
@@ -21,7 +19,7 @@ test.describe('Функциональные API тесты', () => {
   test('POST /posts', async ({ request }) => {
     let createPostService = new CreatePostService();
     let newPost = postDataGenerator.generatePostData();
-    let response = await createPostService.post(request, `${URL}/posts`, newPost);
+    let response = await createPostService.post(request, '/posts', newPost);
     expect(response.status()).toBe(201);
     let createdPost = await response.json();
     expect(createdPost.title).toBe(newPost.title);
@@ -32,7 +30,7 @@ test.describe('Функциональные API тесты', () => {
   //Test3 - Получение списка комментариев
   test('GET /comments', async ({ request }) => {
     let getCommentsService = new GetCommentsService();
-    let response = await getCommentsService.get(request, `${URL}/comments`);
+    let response = await getCommentsService.get(request, '/comments');
     expect(response.status()).toBe(200);
     let comments = await response.json();
     expect(comments.length).toBeGreaterThan(0);
@@ -42,7 +40,7 @@ test.describe('Функциональные API тесты', () => {
   test('POST /comments', async ({ request }) => {
     let createCommentService = new CreateCommentService();
     let newComment = commentDataGenerator.generateCommentData();
-    let response = await createCommentService.post(request, `${URL}/comments`, newComment);
+    let response = await createCommentService.post(request, '/comments', newComment);
     expect(response.status()).toBe(201);
     let createdComment = await response.json();
     expect(createdComment.postId).toBe(newComment.postId);
@@ -60,7 +58,7 @@ test.describe('Функциональные API тесты', () => {
       body: 'Updated Body',
       userId: 1,
     };
-    let response = await updatePostService.put(request, `${URL}/posts/1`, updatedPostData);
+    let response = await updatePostService.put(request, '/posts/1', updatedPostData);
     expect(response.status()).toBe(200);
     let updatedPost = await response.json();
     expect(updatedPost.title).toBe(updatedPostData.title);
@@ -71,7 +69,7 @@ test.describe('Функциональные API тесты', () => {
   //Test6 - Удаление существующего поста
   test('DELETE /posts/1', async ({ request }) => {
     let deletePostService = new DeletePostService();
-    let response = await deletePostService.delete(request, `${URL}/posts/1`);
+    let response = await deletePostService.delete(request, '/posts/1');
     expect(response.status()).toBe(200);
     let deletedPost = await response.json();
     expect(deletedPost).toEqual({});
